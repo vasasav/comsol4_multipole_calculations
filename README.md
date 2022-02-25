@@ -4,7 +4,7 @@ This repository houses the code suitable for extracting multipole components fro
 
 [Krishnamoorthy et. al. "Infrared dielectric metamaterials from high refractive index chalcogenides", Nature Comm. 11, 1692 (2020)](https://www.nature.com/articles/s41467-020-15444-0)
 
-The code is not necessarily pretty, but it has been vetted repeatedly to:
+The code has been vetted repeatedly to:
 
 * Work with a range of COMSOL geometries, via the COMSOLs Matlab API
 * Compute the multipoles correctly
@@ -13,7 +13,7 @@ The code is not necessarily pretty, but it has been vetted repeatedly to:
 
 ## Files
 
-* `Mult_Extract.m` - the top-level file that would be run to launch the extraction of the multipoles given COMSOL file. Includes a loop over the wavelengths, to get the spectrum
+* `Mult_Extract.m` - the top-level file that would be run to launch the extraction of the multipoles given COMSOL file. Includes a loop over the wavelengths, to get the spectrum. Needs appropriate COMSOL extensions for MATLAB to run
 * `Get_Bi2Te3_VS_loop_z_offset_good_model.m` - launched by `Mult_Extract.m` to prepare the COMSOL geometry, which will then be used to compute multipole integrals
 * `CSL4v4_ArbMed_ComputeAllMultipoleData_Callback_July19.m` - is called by `Mult_Extract.m` to actually run all the multipole integrals and store them
 * `CSL4v4_ArbMed_GetMultipoleIntegrand_Sep17.m` - called by `CSL4v4_ArbMed_ComputeAllMultipoleData_Callback_July19.m` to parse the simplistic integrand expressions into longer ones that would be accepted by COMSOL
